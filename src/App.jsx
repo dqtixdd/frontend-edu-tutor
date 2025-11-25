@@ -65,12 +65,19 @@ function ChatApp() {
   // 1. Google Login
   const handleGoogleSuccess = (credentialResponse) => {
     const decoded = jwtDecode(credentialResponse.credential);
-    setUser({
+
+    const userObj = {
       email: decoded.email,
       name: decoded.name,
       picture: decoded.picture,
       token: credentialResponse.credential,
-    });
+    };
+
+    // set state
+    setUser(userObj);
+
+    // persist across refresh
+    localStorage.setItem("educationalTutorUser", JSON.stringify(userObj));
   };
 
   useEffect(() => {
