@@ -18,8 +18,7 @@ import {
 import { SiOpenai } from "react-icons/si";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
-const GOOGLE_CLIENT_ID =
-  "765477991622-t0v92rvh5oq82n2qoik8bs5a1mqu375g.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 const makeChatId = () =>
   `chat-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
