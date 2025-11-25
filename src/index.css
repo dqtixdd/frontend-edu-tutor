@@ -1,0 +1,20 @@
+:root {
+  --background: 17 17 17; /* #111 */
+  --foreground: 245 245 245; /* #f5f5f5 */
+  --muted: 38 38 38; /* #262626 */
+  --muted-foreground: 160 160 160; /* #a0a0a0 */
+  --primary: 59 130 246; /* #3b82f6 */
+  --card: 24 24 24; /* #181818 */
+  --border: 48 48 48; /* #303030 */
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
