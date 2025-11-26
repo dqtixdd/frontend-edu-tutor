@@ -16,6 +16,8 @@ import {
   MdSettings,
 } from "react-icons/md";
 import { SiOpenai } from "react-icons/si";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const API_URL = import.meta.env.VITE_API_BASE || "http://localhost:8000";
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
@@ -615,9 +617,12 @@ function ChatApp() {
                         </div>
                       ) : (
                         <>
-                          <div className="whitespace-pre-wrap leading-7 text-gray-100">
-                            {msg.text}
+                          <div className="prose prose-invert max-w-none text-gray-100">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                              {msg.text}
+                            </ReactMarkdown>
                           </div>
+
                           {msg.sources && (
                             <div className="mt-4 rounded-md bg-black/20 p-3 text-xs text-gray-300">
                               <div className="font-semibold uppercase mb-1 text-gray-500">
