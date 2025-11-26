@@ -17,7 +17,7 @@ import {
 } from "react-icons/md";
 import { SiOpenai } from "react-icons/si";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_URL = import.meta.env.VITE_API_BASE || "http://localhost:8000";
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 const makeChatId = () =>
